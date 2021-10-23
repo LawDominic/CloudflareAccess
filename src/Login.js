@@ -1,6 +1,22 @@
-import React from 'react';
+import { response } from 'express';
+import React, {useEffect} from 'react';
 
 function Login() {
+    
+    useEffect(() => {
+        window.addEventListener("fetch", event => {
+            event.respondWith(handleRequest(event.request))
+        })
+    })
+    async function handleRequest(request) {
+        const options = {
+            headers: {
+                'Foo': 'Bar'
+            }
+        }
+        return response.redirect("https://developers.cloudflare.com/workers/about/", options)
+    }
+
     return (
         <section class="hero is-fullheight">
         <div class="container hero-body has-text-centered ">
