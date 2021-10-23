@@ -4,11 +4,10 @@ import React, {useEffect} from 'react';
 function Login() {
     
     useEffect(() => {
-        window.addEventListener("fetch", event => {
-            event.respondWith(handleRequest(event.request))
-        })
+        handleRequest();
     })
-    async function handleRequest(request) {
+
+    async function handleRequest() {
         const options = {
             headers: {
                 'Foo': 'Bar'
