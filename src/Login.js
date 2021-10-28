@@ -1,20 +1,6 @@
-import { response } from 'express';
-import React, {useEffect} from 'react';
+import React from 'react';
 
 function Login() {
-    
-    useEffect(() => {
-        handleRequest();
-    })
-
-    async function handleRequest() {
-        const options = {
-            headers: {
-                'Foo': 'Bar'
-            }
-        }
-        return response.redirect("https://developers.cloudflare.com/workers/about/", options)
-    }
 
     return (
         <section class="hero is-fullheight">
@@ -23,7 +9,7 @@ function Login() {
             <form>
                 <div class="field">
                 <div class="control">
-                    <input class="input is-medium is-rounded" type="email" placeholder="hello@example.com" autocomplete="username" required />
+                    <input class="input is-medium is-rounded" type="email" placeholder="hello@example.com" autoComplete="username" required />
                 </div>
                 </div>
                 <div class="field">
